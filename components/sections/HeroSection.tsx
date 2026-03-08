@@ -3,9 +3,8 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectFade } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/effect-fade";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { heroData, heroBanners } from "@/config/site";
@@ -34,11 +33,11 @@ export function HeroSection() {
         {useSwiper ? (
           <Swiper
             className={styles.heroSwiper}
-            modules={[Autoplay, EffectFade]}
-            effect="fade"
+            modules={[Autoplay]}
             autoplay={{ delay: 3000, disableOnInteraction: false }}
             loop
             allowTouchMove={false}
+            speed={600}
           >
             {heroBanners.map((src, index) => (
               <SwiperSlide key={`hero-bg-${index}`}>
