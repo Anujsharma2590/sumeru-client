@@ -1929,7 +1929,7 @@ public/images/
 ```
 
 
-
+https://github.com/Anujsharma2590/sumeru-client.git
 Updates: 
 
 use Logo, and favicon, 
