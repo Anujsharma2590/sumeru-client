@@ -1928,3 +1928,15 @@ public/images/
   og-image.jpg
 ```
 
+
+
+Updates: 
+
+use Logo, and favicon, 
+#f36f23 this is the color of logo, so please choose color pallette or theme based on this color?
+please use poster and images, or images parallex effect, and let me know the size and what type and description of the images, then i will add this later in public folder.
+
+please read from  @Sumeru-Securities-Profile and i have added bodyguard images also
+
+
+
