@@ -77,23 +77,28 @@ export const aboutContent = {
 
 export const heroData = {
   eyebrow: "Trusted Security & Manpower Solutions",
-  title: "Reliable Security Services with a Modern Professional Standard",
+
+  title: "Reliable Security Services with Modern Professional Standards",
   titleHighlight: "Reliable Security Services",
-  titleRest: " with a Modern Professional Standard",
+  titleRest: " with Modern Professional Standards",
+
   description:
-    "From trained guards and armed protection to housekeeping, CCTV support, and manpower deployment — Sumeru Securities helps businesses and communities stay secure, efficient, and supported.",
+    "Providing trained guards, armed security, housekeeping, CCTV support, and manpower services to keep businesses and communities safe and efficient.",
+
   primaryCta: {
     label: "Request Consultation",
     href: "#contact",
   },
+
   secondaryCta: {
     label: "Explore Services",
     href: "#services",
   },
+
   highlights: [
-    "Trained & verified staff",
-    "Residential & corporate coverage",
-    "Responsive on-ground support",
+    "Verified & trained staff",
+    "Corporate & residential security",
+    "Fast on-ground support",
   ],
 };
 

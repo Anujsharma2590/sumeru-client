@@ -4,9 +4,11 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
+import Button from "@mui/material/Button";
+import Chip from "@mui/material/Chip";
+
 import "swiper/css";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+
 import { heroData, heroBanners } from "@/config/site";
 import styles from "@/styles/hero-section.module.scss";
 
@@ -57,7 +59,9 @@ export function HeroSection() {
           />
         )}
       </div>
+
       <div className={styles.heroOverlay} aria-hidden />
+
       <div className={styles.heroContent}>
         <div className="container">
           <motion.div
@@ -68,8 +72,13 @@ export function HeroSection() {
           >
             <div className={styles.content}>
               <motion.div variants={itemUp} transition={{ duration: 0.5 }}>
-                <Badge className={styles.badge}>{heroData.eyebrow}</Badge>
+                <Chip
+                  label={heroData.eyebrow}
+                  className={styles.badge}
+                  variant="outlined"
+                />
               </motion.div>
+
               <motion.h1
                 variants={itemUp}
                 transition={{ duration: 0.5 }}
@@ -77,9 +86,10 @@ export function HeroSection() {
               >
                 <span className={styles.titleHighlight}>
                   {heroData.titleHighlight}
-                </span>
+                </span>{" "}
                 {heroData.titleRest}
               </motion.h1>
+
               <motion.p
                 variants={itemUp}
                 transition={{ duration: 0.5 }}
@@ -93,20 +103,24 @@ export function HeroSection() {
                 variants={itemUp}
                 transition={{ duration: 0.5 }}
               >
-                <Button asChild size="lg" className={styles.ctaPrimary}>
-                  <Link href={heroData.primaryCta.href}>
-                    {heroData.primaryCta.label}
-                  </Link>
-                </Button>
                 <Button
-                  asChild
-                  size="lg"
-                  variant="outline"
+                  component={Link}
+                  href={heroData.primaryCta.href}
+                  variant="contained"
+                  size="large"
+                  className={styles.ctaPrimary}
+                >
+                  {heroData.primaryCta.label}
+                </Button>
+
+                <Button
+                  component={Link}
+                  href={heroData.secondaryCta.href}
+                  variant="outlined"
+                  size="large"
                   className={styles.ctaSecondary}
                 >
-                  <Link href={heroData.secondaryCta.href}>
-                    {heroData.secondaryCta.label}
-                  </Link>
+                  {heroData.secondaryCta.label}
                 </Button>
               </motion.div>
 
