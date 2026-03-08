@@ -100,8 +100,8 @@ export const heroData = {
 /** Hero background images for Swiper rotation (first = current hero image). Add more under public/images/ and list here. */
 export const heroBanners: string[] = [
   "/images/hero-security.png",
-  "/images/hero-security1.png", // duplicate for demo; replace with "/images/hero-banner-2.png" etc.
-  // "/images/hero-banner-3.png",
+  "/images/hero-security2.png",
+  "/images/hero-security3.png",
 ];
 
 export const services = [

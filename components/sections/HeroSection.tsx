@@ -34,10 +34,10 @@ export function HeroSection() {
           <Swiper
             className={styles.heroSwiper}
             modules={[Autoplay]}
-            autoplay={{ delay: 3000, disableOnInteraction: false }}
+            autoplay={{ delay: 5000, disableOnInteraction: false }}
             loop
             allowTouchMove={false}
-            speed={600}
+            speed={1000}
           >
             {heroBanners.map((src, index) => (
               <SwiperSlide key={`hero-bg-${index}`}>
