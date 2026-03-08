@@ -3,21 +3,26 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Drawer from "@mui/material/Drawer";
-import { Button } from "@/components/ui/button";
+import Button from "@mui/material/Button";
 import { siteConfig } from "@/config/site";
 import styles from "@/styles/header.module.scss";
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const openMenu = () => setMobileMenuOpen(true);
   const closeMenu = () => setMobileMenuOpen(false);
 
   return (
     <header className={styles.header}>
       <div className="container">
-        <Link href="#home" className={styles.logo} aria-label="Sumeru Securities - Home">
+        <Link
+          href="#home"
+          className={styles.logo}
+          aria-label="Sumeru Securities - Home"
+        >
           <Image
             src="/logo.png"
             alt="Sumeru Securities and Consultants LLP"
@@ -28,7 +33,7 @@ export function Header() {
           />
         </Link>
 
-        <nav className={styles.desktopNav}>
+        <nav className={styles.desktopNav} aria-label="Primary navigation">
           {siteConfig.nav.map((item) => (
             <Link key={item.href} href={item.href} className={styles.navLink}>
               {item.label}
@@ -37,8 +42,14 @@ export function Header() {
         </nav>
 
         <div className={styles.desktopCta}>
-          <Button asChild>
-            <Link href="#contact">Get Quote</Link>
+          <Button
+            component={Link}
+            href="#contact"
+            variant="contained"
+            size="large"
+            className={styles.ctaButton}
+          >
+            Talk to Our Team
           </Button>
         </div>
 
@@ -46,7 +57,7 @@ export function Header() {
           <button
             type="button"
             className={styles.hamburger}
-            onClick={() => setMobileMenuOpen(true)}
+            onClick={openMenu}
             aria-expanded={mobileMenuOpen}
             aria-label="Open menu"
           >
@@ -60,13 +71,15 @@ export function Header() {
         open={mobileMenuOpen}
         onClose={closeMenu}
         slotProps={{
-          backdrop: { sx: { backgroundColor: "rgba(0,0,0,0.4)" } },
+          backdrop: {
+            sx: { backgroundColor: "rgba(0,0,0,0.42)" },
+          },
           paper: {
             sx: {
-              width: "min(320px, 85vw)",
+              width: "min(340px, 86vw)",
               boxSizing: "border-box",
               borderLeft: "1px solid rgba(0,0,0,0.08)",
-              boxShadow: "-4px 0 24px rgba(0, 0, 0, 0.12)",
+              boxShadow: "-8px 0 28px rgba(0,0,0,0.12)",
               backgroundColor: "#ffffff",
             },
           },
@@ -76,21 +89,51 @@ export function Header() {
         }}
       >
         <div className={styles.mobileMenuInner}>
-          {siteConfig.nav.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={styles.mobileLink}
+          <div className={styles.mobileMenuTop}>
+            <Image
+              src="/logo.png"
+              alt="Sumeru Securities and Consultants LLP"
+              width={140}
+              height={42}
+              className={styles.mobileLogoImage}
+            />
+
+            <button
+              type="button"
+              className={styles.closeButton}
+              onClick={closeMenu}
+              aria-label="Close menu"
+            >
+              <X size={20} />
+            </button>
+          </div>
+
+          <nav className={styles.mobileMenuNav} aria-label="Mobile navigation">
+            {siteConfig.nav.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={styles.mobileLink}
+                onClick={closeMenu}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+
+          <div className={styles.mobileCta}>
+            <Button
+              component={Link}
+              href="#contact"
+              variant="contained"
+              fullWidth
+              size="large"
+              className={styles.ctaButton}
               onClick={closeMenu}
             >
-              {item.label}
-            </Link>
-          ))}
-          <Button asChild>
-            <Link href="#contact" onClick={closeMenu}>
               Request Consultation
-            </Link>
-          </Button>
+            </Button>
+          </div>
         </div>
       </Drawer>
     </header>

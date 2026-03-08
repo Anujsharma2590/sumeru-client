@@ -22,6 +22,7 @@
 .logo {
   display: flex;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .logoImage {
@@ -35,9 +36,11 @@
   display: flex;
   align-items: center;
   gap: 0.25rem;
+  margin-left: auto;
 }
 
 .navLink {
+  position: relative;
   color: $text-dim;
   font-size: 0.9375rem;
   font-weight: 500;
@@ -53,13 +56,30 @@
 
 .desktopCta {
   display: flex;
+  margin-left: 0.5rem;
+}
+
+.ctaButton {
+  background: $primary !important;
+  color: #fff !important;
+  border-radius: $radius-pill !important;
+  text-transform: none !important;
+  font-weight: 600 !important;
+  padding: 0.6rem 1.35rem !important;
+  box-shadow: none !important;
+
+  &:hover {
+    background: $primary-hover !important;
+    box-shadow: none !important;
+  }
 }
 
 .mobileNav {
   display: none;
 }
 
-.hamburger {
+.hamburger,
+.closeButton {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -88,21 +108,49 @@
 .mobileMenuInner {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
-  padding: 5rem 1.25rem 1.5rem;
+  min-height: 100%;
+  padding: 1rem 1rem 1.5rem;
+}
+
+.mobileMenuTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid $border;
+}
+
+.mobileLogoImage {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+.mobileMenuNav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding-top: 1rem;
 }
 
 .mobileLink {
   font-size: 1rem;
   font-weight: 500;
   color: $text-main;
-  padding: 0.75rem 1rem;
+  padding: 0.85rem 1rem;
   border-radius: $radius-sm;
-  transition: background $transition;
+  transition: background $transition, color $transition;
 
   &:hover {
     background: rgba(243, 111, 35, 0.08);
+    color: $primary;
   }
+}
+
+.mobileCta {
+  margin-top: auto;
+  padding-top: 1.25rem;
 }
 
 @media (max-width: 900px) {
