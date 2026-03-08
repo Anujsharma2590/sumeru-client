@@ -2,9 +2,13 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, EffectFade } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/effect-fade";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { heroData } from "@/config/site";
+import { heroData, heroBanners } from "@/config/site";
 import styles from "@/styles/hero-section.module.scss";
 
 const stagger = {
@@ -22,9 +26,38 @@ const itemUp = {
 };
 
 export function HeroSection() {
+  const useSwiper = heroBanners.length > 1;
+
   return (
     <section id="home" className={styles.hero}>
-      <div className={styles.heroBg} aria-hidden />
+      <div className={styles.heroBgWrap} aria-hidden>
+        {useSwiper ? (
+          <Swiper
+            className={styles.heroSwiper}
+            modules={[Autoplay, EffectFade]}
+            effect="fade"
+            autoplay={{ delay: 3000, disableOnInteraction: false }}
+            loop
+            allowTouchMove={false}
+          >
+            {heroBanners.map((src, index) => (
+              <SwiperSlide key={`hero-bg-${index}`}>
+                <div
+                  className={styles.heroBgSlide}
+                  style={{ backgroundImage: `url(${src})` }}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        ) : (
+          <div
+            className={styles.heroBgSlide}
+            style={{
+              backgroundImage: `url(${heroBanners[0] ?? "/images/hero-security.png"})`,
+            }}
+          />
+        )}
+      </div>
       <div className={styles.heroOverlay} aria-hidden />
       <div className={styles.heroContent}>
         <div className="container">
