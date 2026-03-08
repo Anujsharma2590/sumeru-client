@@ -1,43 +1,106 @@
 @use "./variables" as *;
 
 .hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
   padding: 6rem 0 4rem;
-  background: $bg;
+  overflow: hidden;
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  background-image: url("/images/hero-security.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: $bg;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    rgba(26, 26, 26, 0.88) 0%,
+    rgba(26, 26, 26, 0.6) 50%,
+    rgba(26, 26, 26, 0.4) 100%
+  );
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  width: 100%;
 }
 
 .grid {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 2.5rem;
-  align-items: center;
+  display: block;
 }
 
-.content h1 {
-  margin: 1rem 0;
-  font-size: clamp(2.25rem, 5vw, 4rem);
-  line-height: 1.1;
-  color: $text-main;
+.content {
+  max-width: 640px;
 }
 
-.content p {
+.title {
+  margin: 1rem 0 0;
+  font-size: clamp(2.25rem, 5vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+
+.titleHighlight {
+  color: $primary;
+}
+
+.description {
   max-width: 540px;
-  color: $text-muted;
+  margin: 1.25rem 0 0;
+  color: rgba(255, 255, 255, 0.9);
   font-size: 1.0625rem;
   line-height: 1.75;
 }
 
 .badge {
-  border: 1px solid $border-strong;
-  background: rgba(243, 111, 35, 0.1);
-  color: $primary;
+  border: 1px solid rgba(243, 111, 35, 0.6);
+  background: rgba(243, 111, 35, 0.2);
+  color: $primary-soft;
   font-weight: 600;
 }
 
 .actions {
   display: flex;
-  gap: 0.75rem;
-  margin-top: 1.5rem;
+  gap: 1rem;
+  margin-top: 1.75rem;
   flex-wrap: wrap;
+}
+
+.ctaPrimary {
+  background: $primary !important;
+  color: #fff !important;
+  border-color: $primary !important;
+
+  &:hover {
+    background: $primary-hover !important;
+    border-color: $primary-hover !important;
+    color: #fff !important;
+  }
+}
+
+.ctaSecondary {
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  color: #fff !important;
+  background: transparent !important;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.12) !important;
+    border-color: rgba(255, 255, 255, 0.7) !important;
+    color: #fff !important;
+  }
 }
 
 .highlights {
@@ -49,56 +112,25 @@
 
 .highlights span {
   padding: 0.5rem 0.875rem;
-  border: 1px solid $border;
+  border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: $radius-pill;
-  background: $bg-surface;
-  color: $text-muted;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.9);
   font-size: 0.875rem;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
-}
-
-.visual {
-  position: relative;
-}
-
-.imageParallax {
-  width: 100%;
-}
-
-.imageWrap {
-  position: relative;
-  min-height: 480px;
-  overflow: hidden;
-  border-radius: $radius-lg;
-  border: 1px solid $border;
-  box-shadow: $shadow-lg;
-}
-
-.image {
-  object-fit: cover;
 }
 
 @media (max-width: 900px) {
   .hero {
+    min-height: 85vh;
     padding: 5rem 0 3rem;
   }
 
-  .grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .content h1 {
-    font-size: clamp(2rem, 8vw, 2.75rem);
-  }
-
-  .imageWrap {
-    min-height: 320px;
-    order: -1;
+  .title {
+    font-size: clamp(2rem, 8vw, 3rem);
   }
 
   .actions {
-    margin-top: 1.25rem;
+    margin-top: 1.5rem;
   }
 
   .highlights {
@@ -108,11 +140,8 @@
 
 @media (max-width: 640px) {
   .hero {
+    min-height: 80vh;
     padding: 4.5rem 0 2.5rem;
-  }
-
-  .imageWrap {
-    min-height: 260px;
   }
 
   .actions {

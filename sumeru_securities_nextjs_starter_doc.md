@@ -1940,3 +1940,29 @@ please read from  @Sumeru-Securities-Profile and i have added bodyguard images a
 
 
 
+Create a single hero banner image for a security and manpower services company website (Sumeru Securities, India). The image will be used as a full-bleed background: it will be cropped to different aspect ratios (wide on desktop, taller on mobile) and a dark gradient overlay will be applied from the left, so the left 40–50% will appear darker and the right side will stay more visible.
+
+Content and mood
+
+Professional security and manpower theme: e.g. uniformed security personnel, or a mix of security and facility staff (guards, housekeeping, support) in a clean, modern setting.
+Indian commercial context: office building, corporate campus, or residential complex entrance.
+Trustworthy, disciplined, and professional tone; well-lit, high-quality look.
+No text or logos in the image.
+Composition and framing
+
+Horizontal/landscape orientation.
+Left side can be slightly less busy or have more shadow, as it will be darkened by the overlay for white/orange text.
+Right side should have clear, strong imagery (people, building, or environment) that still reads when the left is darkened.
+Some depth (e.g. foreground and background) so it doesn’t feel flat when used as a background.
+Technical
+
+Style: realistic photography or high-end photorealistic render.
+Resolution: at least 1920×1080 (16:9); 1920×1200 or 2560×1440 is better for cover/crop.
+Lighting: natural or soft professional lighting; avoid harsh shadows on faces.
+Colour: neutral or slightly warm; no strong colour cast so the site’s orange accent (
+#f36f23) and overlay work well on top.
+What to avoid
+
+Cluttered or chaotic scenes.
+Visible text, signage, or logos.
+Overly dark or low-contrast images that would clash with the dark overlay.

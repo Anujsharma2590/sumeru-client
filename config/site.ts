@@ -78,6 +78,8 @@ export const aboutContent = {
 export const heroData = {
   eyebrow: "Trusted Security & Manpower Solutions",
   title: "Reliable Security Services with a Modern Professional Standard",
+  titleHighlight: "Reliable Security Services",
+  titleRest: " with a Modern Professional Standard",
   description:
     "From trained guards and armed protection to housekeeping, CCTV support, and manpower deployment — Sumeru Securities helps businesses and communities stay secure, efficient, and supported.",
   primaryCta: {
