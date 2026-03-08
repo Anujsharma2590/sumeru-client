@@ -59,23 +59,44 @@
   display: none;
 }
 
-.sheetContent {
-  border-left: 1px solid $border;
+.hamburger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid $border;
+  border-radius: $radius-sm;
   background: $bg-surface;
+  color: $text-main;
+  cursor: pointer;
+  transition: background $transition, border-color $transition, color $transition;
+
+  &:hover {
+    background: rgba(243, 111, 35, 0.08);
+    border-color: rgba(243, 111, 35, 0.3);
+    color: $primary;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $primary;
+    outline-offset: 2px;
+  }
 }
 
 .mobileMenuInner {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  padding-top: 1.5rem;
+  gap: 0.25rem;
+  padding: 5rem 1.25rem 1.5rem;
 }
 
 .mobileLink {
   font-size: 1rem;
   font-weight: 500;
   color: $text-main;
-  padding: 0.75rem 0;
+  padding: 0.75rem 1rem;
   border-radius: $radius-sm;
   transition: background $transition;
 
