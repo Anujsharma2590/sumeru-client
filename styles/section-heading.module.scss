@@ -1,0 +1,39 @@
+@use "./variables" as *;
+
+.wrapper {
+  max-width: 720px;
+  margin-bottom: 2.25rem;
+}
+
+.centered {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: $radius-pill;
+  border: 1px solid $border-strong;
+  background: rgba(197, 164, 109, 0.1);
+  color: $gold-soft;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 1rem 0 0;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.1;
+}
+
+.description {
+  margin: 1rem 0 0;
+  color: $text-muted;
+  line-height: 1.8;
+  font-size: 1.02rem;
+}

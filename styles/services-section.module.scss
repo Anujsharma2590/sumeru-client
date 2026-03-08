@@ -1,0 +1,45 @@
+
+@use "./variables" as *;
+@use "./mixins" as *;
+
+.section {
+  @include section-spacing;
+}
+
+.grid {
+  @include grid-auto(260px);
+}
+
+.card {
+  @include card-surface;
+  @include hover-lift;
+  height: 100%;
+}
+
+.cardContent {
+  padding: 1.5rem;
+}
+
+.iconWrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid $border-strong;
+  background: rgba(197, 164, 109, 0.1);
+  color: $gold-soft;
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  margin: 0 0 0.7rem;
+  font-size: 1.3rem;
+}
+
+.card p {
+  margin: 0;
+  color: $text-muted;
+  line-height: 1.75;
+}

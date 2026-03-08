@@ -1,0 +1,36 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+.section {
+  @include section-spacing;
+}
+
+.grid {
+  @include grid-auto(240px);
+}
+
+.card {
+  @include card-surface;
+  padding: 1.6rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.step {
+  display: inline-flex;
+  margin-bottom: 1rem;
+  color: $gold-soft;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.4rem;
+}
+
+.card h3 {
+  margin: 0 0 0.7rem;
+  font-size: 1.25rem;
+}
+
+.card p {
+  margin: 0;
+  color: $text-muted;
+  line-height: 1.75;
+}

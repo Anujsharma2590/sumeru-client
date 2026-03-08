@@ -1,0 +1,51 @@
+
+@use "./variables" as *;
+
+@mixin section-spacing {
+  padding: 5rem 0;
+}
+
+@mixin card-surface {
+  border: 1px solid $border;
+  background: $bg-card;
+  backdrop-filter: blur(10px);
+  border-radius: $radius-md;
+}
+
+@mixin hover-lift {
+  transition:
+    transform $transition,
+    border-color $transition,
+    background $transition,
+    box-shadow $transition;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: $border-strong;
+    background: $bg-card-strong;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@mixin grid-auto($min) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($min, 1fr));
+  gap: 1.5rem;
+}
+
+@mixin section-title {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  line-height: 1.1;
+}
+
+@mixin body-copy {
+  color: $text-muted;
+  line-height: 1.8;
+}
+
+@mixin mobile {
+  @media (max-width: 900px) {
+    @content;
+  }
+}

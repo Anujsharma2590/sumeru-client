@@ -1,0 +1,43 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+.section {
+  @include section-spacing;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.list {
+  display: grid;
+  gap: 1rem;
+}
+
+.item {
+  @include card-surface;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  padding: 1.2rem 1.25rem;
+}
+
+.item svg {
+  color: $gold;
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+}
+
+.item span {
+  color: $text-main;
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

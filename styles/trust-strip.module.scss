@@ -1,0 +1,37 @@
+@use "./variables" as *;
+
+.strip {
+  padding: 1rem 0 0;
+}
+
+.items {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+
+.items span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 58px;
+  padding: 0.9rem 1rem;
+  text-align: center;
+  border: 1px solid $border;
+  border-radius: $radius-pill;
+  background: rgba(255, 255, 255, 0.04);
+  color: $text-main;
+  font-size: 0.94rem;
+}
+
+@media (max-width: 900px) {
+  .items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .items {
+    grid-template-columns: 1fr;
+  }
+}

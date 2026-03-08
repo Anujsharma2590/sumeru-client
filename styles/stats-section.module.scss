@@ -1,0 +1,28 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+.section {
+  @include section-spacing;
+  padding-top: 1rem;
+}
+
+.grid {
+  @include grid-auto(220px);
+}
+
+.card {
+  @include card-surface;
+  text-align: center;
+  padding: 2rem 1.25rem;
+}
+
+.card h3 {
+  margin: 0;
+  color: $gold-soft;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.card p {
+  margin: 0.5rem 0 0;
+  color: $text-muted;
+}

@@ -1,0 +1,53 @@
+
+@use "./variables" as *;
+
+.footer {
+  padding: 2.5rem 0;
+  border-top: 1px solid $border;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  padding-bottom: 1.5rem;
+}
+
+.top h3 {
+  margin: 0 0 0.75rem;
+}
+
+.top p {
+  max-width: 560px;
+  color: $text-muted;
+  line-height: 1.8;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-content: flex-start;
+}
+
+.links a {
+  color: $text-dim;
+}
+
+.bottom {
+  padding-top: 1.25rem;
+  border-top: 1px solid $border;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  color: $text-dim;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 900px) {
+  .top,
+  .bottom {
+    flex-direction: column;
+  }
+}

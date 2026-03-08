@@ -1,0 +1,27 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+.section {
+  @include section-spacing;
+}
+
+.accordion {
+  border: 1px solid $border;
+  border-radius: $radius-md;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 0 1rem;
+}
+
+.accordion :global([data-state="open"]) {
+  color: $text-main;
+}
+
+.accordion :global(button) {
+  color: $text-main;
+}
+
+.accordion :global(.text-sm),
+.accordion :global([data-radix-accordion-content]) {
+  color: $text-muted;
+}
