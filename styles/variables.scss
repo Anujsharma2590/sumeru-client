@@ -1,20 +1,30 @@
-$bg-dark: #0b1220;
-$bg-surface: #101a2b;
-$bg-card: rgba(255, 255, 255, 0.04);
-$bg-card-strong: rgba(255, 255, 255, 0.06);
-$gold: #c5a46d;
-$gold-soft: #f3d8a6;
-$text-main: #f7f2e8;
-$text-muted: #d8e0ea;
-$text-dim: #aeb9c8;
-$border: rgba(255, 255, 255, 0.1);
-$border-strong: rgba(197, 164, 109, 0.28);
-$shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
-$radius-sm: 14px;
-$radius-md: 20px;
-$radius-lg: 28px;
+// Light theme — professional, clean
+$bg: #fafaf9;
+$bg-surface: #ffffff;
+$bg-alt: #f5f4f2;
+$bg-card: #ffffff;
+$bg-card-hover: #fefdfb;
+$primary: #f36f23;
+$primary-hover: #e05f1a;
+$primary-soft: #f9a574;
+$gold: #f36f23;
+$gold-soft: #c55a1f;
+$text-main: #1a1a1a;
+$text-muted: #525252;
+$text-dim: #737373;
+$border: rgba(0, 0, 0, 0.08);
+$border-strong: rgba(243, 111, 35, 0.4);
+$shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+$shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.1);
+$radius-sm: 10px;
+$radius-md: 16px;
+$radius-lg: 24px;
 $radius-pill: 999px;
 $container: 1180px;
 $container-sm: 860px;
-$header-height: 76px;
-$transition: 0.3s ease;
+$header-height: 72px;
+$transition: 0.25s ease;
+
+// Legacy aliases for existing SCSS
+$bg-dark: $bg;
+$bg-card-strong: $bg-card-hover;

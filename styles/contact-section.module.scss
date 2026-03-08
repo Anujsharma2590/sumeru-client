@@ -36,7 +36,7 @@
 .form :global(input),
 .form :global(textarea) {
   border-color: $border;
-  background: rgba(255, 255, 255, 0.03);
+  background: $bg;
   color: $text-main;
 }
 

@@ -4,6 +4,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { Parallax } from "react-scroll-parallax";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { heroData } from "@/config/site";
@@ -47,15 +48,17 @@ export function HeroSection() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.15 }}
           >
-            <div className={styles.imageWrap}>
-              <Image
-                src="/images/hero-security.png"
-                alt="Professional security team at commercial premises"
-                fill
-                priority
-                className={styles.image}
-              />
-            </div>
+            <Parallax speed={8} className={styles.imageParallax}>
+              <div className={styles.imageWrap}>
+                <Image
+                  src="/images/hero-security.jpg"
+                  alt="Professional security team at commercial premises"
+                  fill
+                  priority
+                  className={styles.image}
+                />
+              </div>
+            </Parallax>
           </motion.div>
         </div>
       </div>

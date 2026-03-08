@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
 import "./globals.scss";
 import { siteConfig } from "@/config/site";
+import { ParallaxProviderWrapper } from "@/components/providers/ParallaxProviderWrapper";
 
 export const metadata: Metadata = {
-  title: `${siteConfig.company.name} | Security & Manpower Services`,
+  title: `${siteConfig.company.legalName} | Security & Manpower Services`,
   description: siteConfig.company.description,
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
   keywords: [
     "security services in Delhi NCR",
     "security guards service",
@@ -15,13 +20,13 @@ export const metadata: Metadata = {
     "Sumeru Securities",
   ],
   openGraph: {
-    title: `${siteConfig.company.name} | Security & Manpower Services`,
+    title: `${siteConfig.company.legalName} | Security & Manpower Services`,
     description: siteConfig.company.description,
     url: siteConfig.company.website,
-    siteName: siteConfig.company.name,
+    siteName: siteConfig.company.legalName,
     images: [
       {
-        url: "/images/hero-security.png",
+        url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
         alt: siteConfig.company.name,
@@ -43,7 +48,7 @@ export default function RootLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    name: siteConfig.company.name,
+    name: siteConfig.company.legalName,
     description: siteConfig.company.description,
     telephone: siteConfig.company.phone,
     email: siteConfig.company.email,
@@ -62,7 +67,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        {children}
+        <ParallaxProviderWrapper>{children}</ParallaxProviderWrapper>
       </body>
     </html>
   );

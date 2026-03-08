@@ -14,11 +14,12 @@
 
 .imageCard {
   position: relative;
-  min-height: 280px;
+  min-height: 260px;
   overflow: hidden;
-  border-radius: 22px;
+  border-radius: $radius-lg;
   border: 1px solid $border;
-  background: rgba(255, 255, 255, 0.03);
+  background: $bg-alt;
+  box-shadow: $shadow;
 }
 
 .image {

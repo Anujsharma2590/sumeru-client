@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -15,8 +16,15 @@ export function Header() {
   return (
     <header className={styles.header}>
       <div className="container">
-        <Link href="#home" className={styles.logo}>
-          {siteConfig.company.shortName}
+        <Link href="#home" className={styles.logo} aria-label="Sumeru Securities - Home">
+          <Image
+            src="/logo.png"
+            alt="Sumeru Securities and Consultants LLP"
+            width={160}
+            height={48}
+            className={styles.logoImage}
+            priority
+          />
         </Link>
 
         <nav className={styles.desktopNav}>

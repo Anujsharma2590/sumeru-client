@@ -11,18 +11,38 @@ import {
   GraduationCap,
   Store,
   Briefcase,
+  Flame,
+  FileInput,
+  Building,
+  TreePine,
+  Footprints,
+  Calendar,
+  HardHat,
+  UtensilsCrossed,
+  Landmark,
+  Film,
+  Car,
+  Trophy,
+  Truck,
 } from "lucide-react";
 
 export const siteConfig = {
   company: {
     name: "Sumeru Securities",
+    legalName: "Sumeru Securities and Consultants LLP",
     shortName: "Sumeru",
     description:
       "Reliable security, manpower, housekeeping, and surveillance support services for residential, commercial, and industrial spaces.",
     phone: "+91 9873234375",
     phoneHref: "tel:+919873234375",
-    email: "info@sumerullp.com",
-    emailHref: "mailto:info@sumerullp.com",
+    phones: [
+      { number: "+91 9873234338", href: "tel:+919873234338" },
+      { number: "+91 9873234374", href: "tel:+919873234374" },
+      { number: "+91 9873234375", href: "tel:+919873234375" },
+      { number: "+91 9873234333", href: "tel:+919873234333" },
+    ],
+    email: "sumeru.llp@gmail.com",
+    emailHref: "mailto:sumeru.llp@gmail.com",
     address:
       "100, South Enclave, Opp. Dr. Ambedkar Nagar Police Station, New Delhi - 110062",
     whatsappHref: "https://wa.me/919873234375",
@@ -44,6 +64,15 @@ export const siteConfig = {
     "Disciplined supervision",
     "Delhi NCR coverage",
   ],
+};
+
+export const aboutContent = {
+  vision:
+    "At Sumeru Securities, our vision is to redefine security & manpower solutions through innovation and unwavering commitment, ensuring safety without compromise.",
+  mission:
+    "Our mission at Sumeru Securities is to deliver exceptional security & manpower solutions tailored to each client's unique needs. With a focus on professionalism, integrity, and advanced technology, we ensure safety and reliability in every environment we serve.",
+  intro:
+    "Sumeru Securities and Consultants LLP is a trusted manpower solutions provider, connecting skilled professionals with businesses across various industries. We specialize in temporary staffing, permanent recruitment, and contract-based hiring tailored to your specific needs. We deliver reliable, efficient, and flexible workforce solutions. Our team is committed to quality, compliance, and client satisfaction.",
 };
 
 export const heroData = {
@@ -68,16 +97,58 @@ export const heroData = {
 
 export const services = [
   {
-    title: "Security Guards",
+    title: "Housekeeping Services",
     description:
-      "Disciplined guards for offices, societies, retail spaces, and commercial properties.",
-    icon: Shield,
+      "Comprehensive cleaning and maintenance services to ensure a clean and secure environment.",
+    icon: Sparkles,
   },
   {
-    title: "Armed Guards",
+    title: "Multi-Tasking Staff",
     description:
-      "Licensed armed security support for high-sensitivity premises and assignments.",
+      "Professional versatile employees trained to handle a variety of duties across different roles or departments.",
+    icon: Users,
+  },
+  {
+    title: "Armed / Unarmed Security Guards",
+    description:
+      "Highly trained armed and unarmed security personnel to provide maximum protection for high-risk and standard environments.",
     icon: ShieldAlert,
+  },
+  {
+    title: "Fire Watch Services",
+    description:
+      "Dedicated personnel to monitor and ensure fire safety compliance at your site.",
+    icon: Flame,
+  },
+  {
+    title: "Data Entry Operator",
+    description:
+      "Experienced people for inputting, updating, and maintaining accurate information in computer systems and databases.",
+    icon: FileInput,
+  },
+  {
+    title: "CCTV Monitoring",
+    description:
+      "Real-time monitoring of CCTV systems to detect and respond to suspicious activities.",
+    icon: Camera,
+  },
+  {
+    title: "Facility Management",
+    description:
+      "We serve HVAC, Plumbing, Lighting, Electrical, Mechanical and Building Maintenance staff.",
+    icon: Building,
+  },
+  {
+    title: "Gardener",
+    description:
+      "Skilled personnel for cultivating and maintaining outdoor spaces, including gardens, parks, and landscapes.",
+    icon: TreePine,
+  },
+  {
+    title: "Patrol Services",
+    description:
+      "Regular patrols by trained officers to detect crime and maintain safety.",
+    icon: Footprints,
   },
   {
     title: "PSO / Bodyguard",
@@ -86,26 +157,19 @@ export const services = [
     icon: UserCheck,
   },
   {
-    title: "Housekeeping Staff",
+    title: "Security Guards",
     description:
-      "Well-managed housekeeping teams for residential and commercial environments.",
-    icon: Sparkles,
-  },
-  {
-    title: "CCTV Support",
-    description:
-      "Surveillance coordination and support services for effective security monitoring.",
-    icon: Camera,
-  },
-  {
-    title: "Manpower Services",
-    description:
-      "Flexible staffing support for operational, facility, and site requirements.",
-    icon: Users,
+      "Disciplined guards for offices, societies, retail spaces, and commercial properties.",
+    icon: Shield,
   },
 ];
 
 export const reasons = [
+  "Experienced Professionals",
+  "24/7 Support",
+  "Customized Solutions",
+  "Cutting Edge Technology",
+  "Proven Track Record",
   "Verified and trained workforce",
   "Deployment tailored to site requirements",
   "Professional supervision and coordination",
@@ -138,12 +202,23 @@ export const processSteps = [
 ];
 
 export const industries = [
-  { title: "Corporate Offices", icon: Briefcase },
-  { title: "Residential Societies", icon: Building2 },
-  { title: "Retail Stores", icon: Store },
-  { title: "Warehouses", icon: Warehouse },
-  { title: "Educational Institutions", icon: GraduationCap },
-  { title: "Healthcare Facilities", icon: Hospital },
+  { title: "Residential", icon: Building2 },
+  { title: "Commercial", icon: Store },
+  { title: "Industrial", icon: Warehouse },
+  { title: "Events", icon: Calendar },
+  { title: "Education", icon: GraduationCap },
+  { title: "Healthcare", icon: Hospital },
+  { title: "Construction", icon: HardHat },
+  { title: "Hospitality", icon: UtensilsCrossed },
+  { title: "Financial Institutions", icon: Landmark },
+  { title: "Corporate", icon: Briefcase },
+  { title: "Entertainment", icon: Film },
+  { title: "Retail", icon: Store },
+  { title: "Parking Facilities", icon: Car },
+  { title: "Religious Institutions", icon: Building2 },
+  { title: "Sports Venues", icon: Trophy },
+  { title: "Government", icon: Landmark },
+  { title: "Logistics", icon: Truck },
 ];
 
 export const stats = [
@@ -181,6 +256,24 @@ export const faqs = [
   },
 ];
 
+export const testimonials = [
+  {
+    company: "Innovatiview India Pvt Ltd",
+    quote:
+      "We've had the pleasure of partnering with Sumeru Securities for the past years, and their service has exceeded our expectations in every way. The professionalism and expertise of their security team are evident from day one.",
+  },
+  {
+    company: "Inde en Vogue Sourcing Pvt Ltd",
+    quote:
+      "Sumeru Securities has been an invaluable partner in ensuring the safety and security of our premises. Their team is professional, reliable, and always on top of their game. We've seen a noticeable improvement in our security measures since they came on board. We highly recommend Sumeru Securities to anyone in need of top-notch security services.",
+  },
+  {
+    company: "Timeus Interactive Services Pvt Ltd",
+    quote:
+      "Sumeru's housekeeping services are highly professional and reliable. The staff is well-trained, punctual, and maintains excellent cleanliness standards. They ensure all areas are spotless and organized, creating a hygienic and pleasant environment. Highly recommended for maintaining a clean and healthy space.",
+  },
+];
+
 export const galleryImages = [
   {
     src: "/images/gallery-1.jpg",
@@ -197,5 +290,13 @@ export const galleryImages = [
   {
     src: "/images/gallery-4.jpg",
     alt: "Housekeeping and facility support staff",
+  },
+  {
+    src: "/images/gallery-bodyguard-1.jpg",
+    alt: "PSO / bodyguard executive protection",
+  },
+  {
+    src: "/images/gallery-bodyguard-2.jpg",
+    alt: "Professional personal security officer",
   },
 ];

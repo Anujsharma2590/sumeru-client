@@ -5,23 +5,89 @@
   @include section-spacing;
 }
 
-.accordion {
-  border: 1px solid $border;
-  border-radius: $radius-md;
+.faqList {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.faqItem {
+  border-bottom: 1px solid $border;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.faqTrigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 1.25rem;
+  color: $text-main;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: left;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color $transition;
+  -webkit-tap-highlight-color: transparent;
+
+  &:hover {
+    color: $primary;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $primary;
+    outline-offset: -2px;
+  }
+}
+
+.faqQuestion {
+  flex: 1;
+  padding-right: 0.75rem;
+}
+
+.faqIcon {
+  flex-shrink: 0;
+  color: $text-dim;
+  transition: color $transition;
+
+  .faqTrigger:hover &,
+  .faqTrigger[aria-expanded="true"] & {
+    color: $primary;
+  }
+}
+
+.faqPanel {
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.03);
-  padding: 0 1rem;
+  max-height: 0;
+  transition: max-height 0.35s ease;
 }
 
-.accordion :global([data-state="open"]) {
-  color: $text-main;
+.faqPanel[data-open="true"] {
+  max-height: 30rem;
 }
 
-.accordion :global(button) {
-  color: $text-main;
-}
-
-.accordion :global(.text-sm),
-.accordion :global([data-radix-accordion-content]) {
+.faqContent {
+  padding: 0 1.25rem 1rem;
   color: $text-muted;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 640px) {
+  .faqTrigger {
+    padding: 0.875rem 1rem;
+    font-size: 0.9375rem;
+    font-weight: 700;
+  }
+
+  .faqContent {
+    padding: 0 1rem 0.875rem;
+    font-size: 0.875rem;
+  }
 }

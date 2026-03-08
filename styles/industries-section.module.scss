@@ -6,7 +6,12 @@
 }
 
 .grid {
-  @include grid-auto(180px);
+  @include grid-auto(160px);
+
+  @media (max-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
 }
 
 .card {

@@ -19,7 +19,11 @@ export function ContactSection() {
             />
 
             <div className={styles.details}>
-              <a href={siteConfig.company.phoneHref}>{siteConfig.company.phone}</a>
+              {siteConfig.company.phones.map((p) => (
+                <a key={p.href} href={p.href}>
+                  {p.number}
+                </a>
+              ))}
               <a href={siteConfig.company.emailHref}>{siteConfig.company.email}</a>
               <p>{siteConfig.company.address}</p>
               <Button asChild variant="outline">
