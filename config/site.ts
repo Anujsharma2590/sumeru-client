@@ -100,6 +100,24 @@ export const heroData = {
     "Corporate & residential security",
     "Fast on-ground support",
   ],
+   stats: [
+    {
+      value: "20+",
+      label: "Years of Experience",
+    },
+    {
+      value: "50+",
+      label: "Professional Team",
+    },
+    {
+      value: "100+",
+      label: "Happy Clients",
+    },
+    {
+      value: "25+",
+      label: "Awards & Recognitions",
+    },
+  ]
 };
 
 /** Hero background images for Swiper rotation (first = current hero image). Add more under public/images/ and list here. */

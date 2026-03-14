@@ -137,6 +137,19 @@ export function HeroSection() {
           </motion.div>
         </div>
       </div>
+
+      <div className={styles.statsBand}>
+        <div className="container">
+          <div className={styles.statsGrid}>
+            {heroData.stats.map((item) => (
+              <div key={item.label} className={styles.statItem}>
+                <div className={styles.statValue}>{item.value}</div>
+                <div className={styles.statLabel}>{item.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
