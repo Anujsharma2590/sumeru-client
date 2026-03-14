@@ -171,11 +171,7 @@
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0;
-  background: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 26px;
-  backdrop-filter: blur(16px);
-  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.14);
+  background: transparent;
   overflow: hidden;
 }
 
@@ -201,7 +197,7 @@
   margin-top: 0.45rem;
   font-size: 0.95rem;
   font-weight: 600;
-  color: $text-main;
+  color: $bg-surface;
 }
 
 @media (max-width: 900px) {
