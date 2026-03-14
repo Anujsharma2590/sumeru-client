@@ -78,12 +78,12 @@ export const aboutContent = {
 export const heroData = {
   eyebrow: "Trusted Security & Manpower Solutions",
 
-  title: "Reliable Security Services with Modern Professional Standards",
-  titleHighlight: "Reliable Security Services",
-  titleRest: " with Modern Professional Standards",
+  title: "Reliable Security with Modern Standards",
+  titleHighlight: "Reliable Security",
+  titleRest: " with Modern Standards",
 
   description:
-    "Providing trained guards, armed security, housekeeping, CCTV support, and manpower services to keep businesses and communities safe and efficient.",
+    "Security, housekeeping, CCTV, and manpower services across Delhi NCR.",
 
   primaryCta: {
     label: "Request Consultation",

@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import Button from "@mui/material/Button";
-import Chip from "@mui/material/Chip";
 
 import "swiper/css";
 
@@ -71,14 +70,6 @@ export function HeroSection() {
             animate="animate"
           >
             <div className={styles.content}>
-              <motion.div variants={itemUp} transition={{ duration: 0.5 }}>
-                <Chip
-                  label={heroData.eyebrow}
-                  className={styles.badge}
-                  variant="outlined"
-                />
-              </motion.div>
-
               <motion.h1
                 variants={itemUp}
                 transition={{ duration: 0.5 }}
