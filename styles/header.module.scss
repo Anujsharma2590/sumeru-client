@@ -1,14 +1,21 @@
 @use "./variables" as *;
 
 .header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 50;
   height: $header-height;
-  border-bottom: 1px solid $border;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 1px 0 $border;
+  border-bottom: 1px solid transparent;
+  background: transparent;
+  backdrop-filter: blur(0);
+  box-shadow: none;
+  transition:
+    background $transition,
+    border-color $transition,
+    box-shadow $transition,
+    backdrop-filter $transition;
 
   :global(.container) {
     height: 100%;
@@ -17,6 +24,13 @@
     justify-content: space-between;
     gap: 1rem;
   }
+}
+
+.scrolled {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 .logo {
@@ -41,16 +55,25 @@
 
 .navLink {
   position: relative;
-  color: $text-dim;
+  color: rgba(255, 255, 255, 0.92);
   font-size: 0.9375rem;
   font-weight: 500;
-  padding: 0.5rem 0.75rem;
+  padding: 0.55rem 0.8rem;
   border-radius: $radius-sm;
   transition: color $transition, background $transition;
 
   &:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.12);
+  }
+}
+
+.scrolled .navLink {
+  color: $text-dim;
+
+  &:hover {
     color: $primary;
-    background: rgba(243, 111, 35, 0.06);
+    background: rgba(243, 111, 35, 0.08);
   }
 }
 
@@ -66,11 +89,11 @@
   text-transform: none !important;
   font-weight: 600 !important;
   padding: 0.6rem 1.35rem !important;
-  box-shadow: none !important;
+  box-shadow: 0 10px 24px rgba(243, 111, 35, 0.22) !important;
 
   &:hover {
     background: $primary-hover !important;
-    box-shadow: none !important;
+    box-shadow: 0 12px 28px rgba(243, 111, 35, 0.28) !important;
   }
 }
 
@@ -86,22 +109,33 @@
   width: 44px;
   height: 44px;
   padding: 0;
-  border: 1px solid $border;
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: $radius-sm;
-  background: $bg-surface;
-  color: $text-main;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
   cursor: pointer;
   transition: background $transition, border-color $transition, color $transition;
 
   &:hover {
-    background: rgba(243, 111, 35, 0.08);
-    border-color: rgba(243, 111, 35, 0.3);
-    color: $primary;
+    background: rgba(255, 255, 255, 0.14);
+    border-color: rgba(255, 255, 255, 0.26);
   }
 
   &:focus-visible {
     outline: 2px solid $primary;
     outline-offset: 2px;
+  }
+}
+
+.scrolled .hamburger {
+  border: 1px solid $border;
+  background: $bg-surface;
+  color: $text-main;
+
+  &:hover {
+    background: rgba(243, 111, 35, 0.08);
+    border-color: rgba(243, 111, 35, 0.3);
+    color: $primary;
   }
 }
 

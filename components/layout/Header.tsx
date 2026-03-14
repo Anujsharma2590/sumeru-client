@@ -1,22 +1,42 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import Drawer from "@mui/material/Drawer";
 import Button from "@mui/material/Button";
+import clsx from "clsx";
+
 import { siteConfig } from "@/config/site";
 import styles from "@/styles/header.module.scss";
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const openMenu = () => setMobileMenuOpen(true);
   const closeMenu = () => setMobileMenuOpen(false);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 32);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <header className={styles.header}>
+    <header
+      className={clsx(styles.header, {
+        [styles.scrolled]: isScrolled,
+      })}
+    >
       <div className="container">
         <Link
           href="#home"
