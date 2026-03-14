@@ -6,7 +6,7 @@ import styles from "@/styles/testimonials-section.module.scss";
 
 export function TestimonialsSection() {
   return (
-    <section className={styles.section}>
+    <section className={styles.section} aria-label="Client testimonials">
       <div className="container">
         <SectionHeading
           eyebrow="Client Testimonials"
@@ -14,14 +14,14 @@ export function TestimonialsSection() {
           centered
         />
 
-        <div className={styles.grid}>
+        <div className={styles.grid} role="list">
           {testimonials.map((testimonial, index) => (
             <AnimatedReveal key={testimonial.company} delay={index * 0.1}>
-              <div className={styles.card}>
-                <Quote className={styles.quoteIcon} size={28} />
+              <article className={styles.card} role="listitem">
+                <Quote className={styles.quoteIcon} size={28} aria-hidden="true" />
                 <blockquote className={styles.quote}>{testimonial.quote}</blockquote>
                 <cite className={styles.company}>— {testimonial.company}</cite>
-              </div>
+              </article>
             </AnimatedReveal>
           ))}
         </div>

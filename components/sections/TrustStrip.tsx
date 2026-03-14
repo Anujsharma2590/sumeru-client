@@ -3,13 +3,13 @@ import styles from "@/styles/trust-strip.module.scss";
 
 export function TrustStrip() {
   return (
-    <section className={styles.strip}>
+    <section className={styles.strip} aria-label="Trust highlights">
       <div className="container">
-        <div className={styles.items}>
+        <ul className={styles.items} role="list">
           {siteConfig.trustPoints.map((point) => (
-            <span key={point}>{point}</span>
+            <li key={point}>{point}</li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );

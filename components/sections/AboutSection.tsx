@@ -5,7 +5,7 @@ import styles from "@/styles/about-section.module.scss";
 
 export function AboutSection() {
   return (
-    <section id="about" className={styles.section}>
+    <section id="about" className={styles.section} aria-label="About us">
       <div className="container">
         <AnimatedReveal>
           <SectionHeading

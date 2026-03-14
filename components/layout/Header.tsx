@@ -43,14 +43,15 @@ export function Header() {
           className={styles.logo}
           aria-label="Sumeru Securities - Home"
         >
-<Image
-  src="/logo.png"
-  alt="Sumeru Securities and Consultants LLP"
-  width={220}
-  height={70}
-  className={styles.logoImage}
-  priority
-/>
+          <Image
+            src="/logo.png"
+            alt="Sumeru Securities and Consultants LLP"
+            width={220}
+            height={70}
+            sizes="220px"
+            className={styles.logoImage}
+            priority
+          />
         </Link>
 
         <nav className={styles.desktopNav} aria-label="Primary navigation">
@@ -110,13 +111,14 @@ export function Header() {
       >
         <div className={styles.mobileMenuInner}>
           <div className={styles.mobileMenuTop}>
-<Image
-  src="/logo.png"
-  alt="Sumeru Securities and Consultants LLP"
-  width={170}
-  height={54}
-  className={styles.mobileLogoImage}
-/>
+            <Image
+              src="/logo.png"
+              alt="Sumeru Securities and Consultants LLP"
+              width={170}
+              height={54}
+              sizes="170px"
+              className={styles.mobileLogoImage}
+            />
 
             <button
               type="button"

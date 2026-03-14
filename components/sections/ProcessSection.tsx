@@ -4,7 +4,7 @@ import styles from "@/styles/process-section.module.scss";
 
 export function ProcessSection() {
   return (
-    <section className={styles.section}>
+    <section id="process" className={styles.section} aria-label="Our process">
       <div className="container">
         <SectionHeading
           eyebrow="How It Works"
@@ -12,15 +12,15 @@ export function ProcessSection() {
           centered
         />
 
-        <div className={styles.grid}>
+        <ol className={styles.grid} role="list">
           {processSteps.map((item) => (
-            <div key={item.step} className={styles.card}>
-              <span className={styles.step}>{item.step}</span>
+            <li key={item.step} className={styles.card}>
+              <span className={styles.step} aria-hidden="true">{item.step}</span>
               <h3>{item.title}</h3>
               <p>{item.description}</p>
-            </div>
+            </li>
           ))}
-        </div>
+        </ol>
       </div>
     </section>
   );

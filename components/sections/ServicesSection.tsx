@@ -6,7 +6,7 @@ import styles from "@/styles/services-section.module.scss";
 
 export function ServicesSection() {
   return (
-    <section id="services" className={styles.section}>
+    <section id="services" className={styles.section} aria-label="Our services">
       <div className="container">
         <SectionHeading
           eyebrow="Services"
@@ -15,15 +15,15 @@ export function ServicesSection() {
           centered
         />
 
-        <div className={styles.grid}>
+        <div className={styles.grid} role="list">
           {services.map((service, index) => {
             const Icon = service.icon;
 
             return (
               <AnimatedReveal key={service.title} delay={index * 0.08}>
-                <Card className={styles.card}>
+                <Card className={styles.card} role="listitem">
                   <CardContent className={styles.cardContent}>
-                    <div className={styles.iconWrap}>
+                    <div className={styles.iconWrap} aria-hidden="true">
                       <Icon size={22} />
                     </div>
                     <h3>{service.title}</h3>

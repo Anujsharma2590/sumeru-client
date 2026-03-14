@@ -5,7 +5,7 @@ import styles from "@/styles/why-choose-us-section.module.scss";
 
 export function WhyChooseUsSection() {
   return (
-    <section id="why-us" className={styles.section}>
+    <section id="why-us" className={styles.section} aria-label="Why choose us">
       <div className="container">
         <div className={styles.grid}>
           <div>
@@ -16,14 +16,14 @@ export function WhyChooseUsSection() {
             />
           </div>
 
-          <div className={styles.list}>
+          <ul className={styles.list} role="list">
             {reasons.map((reason) => (
-              <div key={reason} className={styles.item}>
-                <CheckCircle2 size={18} />
+              <li key={reason} className={styles.item}>
+                <CheckCircle2 size={18} aria-hidden="true" />
                 <span>{reason}</span>
-              </div>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </div>
     </section>

@@ -5,7 +5,7 @@ import styles from "@/styles/gallery-section.module.scss";
 
 export function GallerySection() {
   return (
-    <section id="gallery" className={styles.section}>
+    <section id="gallery" className={styles.section} aria-label="Gallery">
       <div className="container">
         <SectionHeading
           eyebrow="Gallery"
@@ -13,10 +13,17 @@ export function GallerySection() {
           centered
         />
 
-        <div className={styles.grid}>
+        <div className={styles.grid} role="list">
           {galleryImages.map((image) => (
-            <div key={image.src} className={styles.imageCard}>
-              <Image src={image.src} alt={image.alt} fill className={styles.image} />
+            <div key={image.src} className={styles.imageCard} role="listitem">
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                loading="lazy"
+                className={styles.image}
+              />
             </div>
           ))}
         </div>

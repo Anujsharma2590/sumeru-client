@@ -30,7 +30,7 @@ const contactItems = [
 
 export function ContactSection() {
   return (
-    <section id="contact" className={styles.section}>
+    <section id="contact" className={styles.section} aria-label="Contact us">
       <div className="container">
         <div className={styles.wrapper}>
           <div className={styles.header}>

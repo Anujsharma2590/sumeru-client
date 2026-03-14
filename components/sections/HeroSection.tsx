@@ -31,7 +31,7 @@ export function HeroSection() {
 
   return (
     <section id="home" className={styles.hero}>
-      <div className={styles.heroBgWrap} aria-hidden>
+      <div className={styles.heroBgWrap} aria-hidden="true">
         {useSwiper ? (
           <Swiper
             className={styles.heroSwiper}
@@ -60,7 +60,7 @@ export function HeroSection() {
         )}
       </div>
 
-      <div className={styles.heroOverlay} aria-hidden />
+      <div className={styles.heroOverlay} aria-hidden="true" />
 
       <div className={styles.heroContent}>
         <div className="container">
