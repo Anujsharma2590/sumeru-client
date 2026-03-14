@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { FloatingActions } from "@/components/common/FloatingActions";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { TrustStrip } from "@/components/sections/TrustStrip";
 import { AboutSection } from "@/components/sections/AboutSection";
@@ -50,6 +51,7 @@ export default function HomePage() {
         <ContactSection />
       </main>
       <Footer />
+      <FloatingActions />
     </>
   );
 }
